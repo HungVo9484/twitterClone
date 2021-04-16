@@ -1,0 +1,23 @@
+.SideAuth {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #2DAAE1;
+    box-sizing: border-box;
+}
+
+.SideAuth img {
+    width: 50%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .SideAuth {
+        display: none;
+    }
+}

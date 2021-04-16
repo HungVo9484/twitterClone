@@ -1,0 +1,15 @@
+.UserAuth {
+    margin: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* @media (min-width: 600px) {
+    .UserAuth {
+        flex-flow: column-reverse;
+    }
+} */

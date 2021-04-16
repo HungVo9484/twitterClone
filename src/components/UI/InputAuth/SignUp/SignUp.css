@@ -1,0 +1,50 @@
+.SignIn {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 0 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Title {
+    margin: 30px 0;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.Email {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid rgb(132, 180, 235);
+    margin: 20px 0;
+    width: 400px;
+    height: 60px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #278db9;
+    box-sizing: border-box;
+}
+
+.Email:hover{
+    border: 2px solid #1DA1F2;
+}
+
+.Email input {
+    border: none;
+    background-color: #E8F0FE;
+    font-size: 16px;
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .SignIn {
+        width: 100%;
+    }
+    .Title {
+        font-size: 30px;
+    }
+    .Email {
+        width: 100%;
+    }
+}

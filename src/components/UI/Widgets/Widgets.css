@@ -1,0 +1,9 @@
+.widgets {
+    flex: 0.3;
+} 
+
+/* @media (max-width: 900px) {
+    .Widgets {
+        display: none;
+    }
+} */
