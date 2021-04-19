@@ -1,0 +1,31 @@
+.header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border-bottom: 1px solid var(--twitter-background);
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.header > h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.header > .MuiSvgIcon-root {
+    color: var(--twitter-color) !important;
+    font-size: 25px !important;
+    padding: 10px;
+}
+
+.header > .MuiSvgIcon-root:hover {
+    background-color: #e8f5fe;
+    width: auto;
+    border-radius: 50%;
+    transition: color 100ms ease-out;
+}

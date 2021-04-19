@@ -12,6 +12,7 @@
 .tweetBox_input {
     padding: 20px;
     display: flex;
+    align-items: center;
 }
 
 .tweetBox_input > input {
@@ -19,6 +20,40 @@
     margin-left: 20px;
     font-size: 20px;
     border: none;
+}
+
+.tweetBox_input > input:focus {
+    outline-color: var(--twitter-color);
+}
+
+.tweetBox_footer {
+    display: flex;
+    align-items: center;
+
+}
+
+.tweetBox_icons {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    color: var(--twitter-color);
+    margin-left: 70px;
+
+}
+
+.tweetBox_icons > .MuiSvgIcon-root {
+    color: var(--twitter-color) !important;
+    font-size: 25px !important;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tweetBox_icons > .MuiSvgIcon-root:hover {
+    background-color: #e8f5fe;
+    width: auto;
+    border-radius: 50%;
+    color: var(--twitter-color);
+    transition: color 100ms ease-out;
 }
 
 .tweetBox_button {
@@ -30,8 +65,9 @@
     border-radius: 30px !important;
     width: 80px !important;
     height: 40px !important;
-    margin-top: 20px !important;
+    /* margin-top: 20px !important; */
     margin-left: auto !important;
-
 }
+
+
 

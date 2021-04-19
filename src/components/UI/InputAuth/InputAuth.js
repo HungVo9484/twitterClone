@@ -22,8 +22,11 @@ const MainAuth = () => {
     let auth = <div>
                     <div className="Title">What's happening?</div>
                     <div className="Label">Joining Twitter today</div>
-                    <Button btnType="SignUp" clicked={signUpHandler}>SignUp</Button>
-                    <Button btnType="SignIn" clicked={signInHandler}>SignIn</Button>
+                    <div className="button">
+                        <Button btnType="SignUp" clicked={signUpHandler}>SignUp</Button>
+                        <Button btnType="signIn" clicked={signInHandler}>SignIn</Button>
+                    </div>
+                    
                 </div>;
 
     if (isSignIn) {

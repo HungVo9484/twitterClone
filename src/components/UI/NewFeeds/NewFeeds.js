@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from './Header/Header'
 import TweetBox from './TweetBox/TweetBox';
 import Posts from './Posts/Posts';
 import './NewFeeds.css';
@@ -7,12 +8,16 @@ import './NewFeeds.css';
 const newFeeds = (props) => {
     return (
         <div className="newFeeds">
-            <div className="header">
-                <h2>Home</h2>
-            </div>
+
+            <Header />
+
             <TweetBox />
 
-            {/* Post */}
+            <Posts />
+            <Posts />
+            <Posts />
+            <Posts />
+            <Posts />
             <Posts />
         </div>
         

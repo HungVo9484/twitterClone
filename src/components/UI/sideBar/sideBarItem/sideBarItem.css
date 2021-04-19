@@ -1,11 +1,11 @@
 .sideBarItem {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    width: fit-content;
 }
 
 .sideBarItem > .MuiSvgIcon-root {
-    padding: 20px;
+    padding: 10px;
 }
 
 .sideBarItem > h2 {
@@ -19,6 +19,7 @@
     border-radius: 30px;
     color: var(--twitter-color);
     transition: color 100ms ease-out;
+    cursor: pointer;
 }
 
 .sideBarItemActive {

@@ -1,11 +1,17 @@
 .UserAuth {
-    margin: 0;
+    /* margin: 0;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     width: 100%;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; */
+
+    display: flex;
+    height: 100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* @media (min-width: 600px) {

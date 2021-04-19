@@ -11,21 +11,26 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { Button }from '@material-ui/core';
 
 import SideBarItem from './sideBarItem/sideBarItem';
+import LogoutBar from './LogoutBar/LogoutBar';
 import './sideBar.css';
 
 const sideBar = (props) => {
     return (
-        <div className="sideBar">
-            <TwitterIcon className="sideBarIcon"/>
-            <SideBarItem active text='Home' Icon={HomeIcon} />
-            <SideBarItem text='Notifications' Icon={NotificationsNoneIcon} />
-            <SideBarItem text='Messages' Icon={MailOutLineIcon} />
-            <SideBarItem text='Bookmarks' Icon={BookmarkBorderIcon} />
-            <SideBarItem text='Lists' Icon={ListAltIcon} />
-            <SideBarItem text='Profile' Icon={PermIdentityIcon} />
-            <SideBarItem text='More' Icon={MoreHorizIcon} />
-            <Button variant="outlined" className="sideBarButton" fullWidth>Tweet</Button>
+        <div className="sideBarOutline">
+            <div className="sideBar">
+                <TwitterIcon className="sideBarIcon"/>
+                <SideBarItem active text='Home' Icon={HomeIcon} />
+                <SideBarItem text='Notifications' Icon={NotificationsNoneIcon} />
+                <SideBarItem text='Messages' Icon={MailOutLineIcon} />
+                <SideBarItem text='Bookmarks' Icon={BookmarkBorderIcon} />
+                <SideBarItem text='Lists' Icon={ListAltIcon} />
+                <SideBarItem text='Profile' Icon={PermIdentityIcon} />
+                <SideBarItem text='More' Icon={MoreHorizIcon} />
+                <Button variant="outlined" className="sideBarButton" fullWidth>Tweet</Button>
+            </div>
+            <LogoutBar />
         </div>
+        
     );
 }
  

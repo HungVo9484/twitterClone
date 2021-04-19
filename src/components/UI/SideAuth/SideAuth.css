@@ -1,13 +1,9 @@
 .SideAuth {
-    position: fixed;
+    flex: 0.3;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 30%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #2DAAE1;
+    background-color: var(--twitter-color);
     box-sizing: border-box;
 }
 
