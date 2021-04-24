@@ -7,7 +7,7 @@ import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfie
 import ScheduleOutlinedIcon from '@material-ui/icons/ScheduleOutlined';
 
 import './TweetBox.css';
-import bikiniPic from '../../../../assets/avatar/bikini.jpg';
+import bikiniPic from '../../../assets/avatar/bikini.jpg';
 
 
 

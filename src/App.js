@@ -1,16 +1,26 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import userAuth from './containers/userAuth/UserAuth';
-import home from './containers/home/home';
+import UserAuth from './containers/userAuth/UserAuth';
+import Home from './containers/home/home';
 import "./App.css";
 
 const App = () => {
+
   return (
-    <div>
-      <Route path="/userAuth" component={userAuth} />
-      <Route path="/home" exact component={home} />
-      
-    </div>
+    <Switch>
+      <Route path="/" exact>
+        <Redirect to="/userAuth" />
+      </Route>
+      <Route path="/userAuth">
+        <UserAuth />
+      </Route>
+      <Route path="/home" exact>
+        <Home />
+      </Route>
+      <Route path="*">
+        <h2>Page Not Found</h2>
+      </Route>
+    </Switch>
   );
 }
 

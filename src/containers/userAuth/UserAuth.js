@@ -1,10 +1,11 @@
 import React from 'react';
 
-import SideAuth from '../../components/UI/SideAuth/SideAuth';
-import InputAuth from '../../components/UI/InputAuth/InputAuth';
+import SideAuth from '../../components/SideAuth/SideAuth';
+import InputAuth from '../../components/InputAuth/InputAuth';
 import './UserAuth.css';
 
-const auth = () => {
+
+const Auth = () => {
     return (
         <div className="UserAuth">
             <SideAuth />
@@ -13,4 +14,4 @@ const auth = () => {
     );
 }
  
-export default auth;
+export default Auth;

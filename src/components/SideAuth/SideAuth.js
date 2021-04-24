@@ -1,6 +1,6 @@
 import React from 'react';
 
-import twitterLogoSide from '../../../assets/images/twitterBlackLogo.png';
+import twitterLogoSide from '../../assets/images/twitterBlackLogo.png';
 import './SideAuth.css';
 
 

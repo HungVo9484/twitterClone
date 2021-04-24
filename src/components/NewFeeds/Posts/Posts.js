@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar } from '@material-ui/core';
 import { VerifiedUser, ChatBubbleOutline, Repeat, FavoriteBorder, Publish } from '@material-ui/icons';
 
-import bikiniPic from '../../../../assets/avatar/bikini.jpg';
+import bikiniPic from '../../../assets/avatar/bikini.jpg';
 import './Posts.css';
 
 const Posts = ({
