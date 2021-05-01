@@ -10,6 +10,7 @@ import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { Button }from '@material-ui/core';
 
+
 import SideBarItem from './sideBarItem/sideBarItem';
 import LogoutBar from './LogoutBar/LogoutBar';
 import './sideBar.css';
@@ -28,7 +29,7 @@ const sideBar = (props) => {
                 <SideBarItem text='More' Icon={MoreHorizIcon} />
                 <Button variant="outlined" className="sideBarButton" fullWidth>Tweet</Button>
             </div>
-            <LogoutBar />
+                <LogoutBar />
         </div>
         
     );

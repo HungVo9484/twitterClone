@@ -1,10 +1,19 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import UseInput from '../../../hooks/useInput';
 import Button from '../../Button/Button';
+import { signIn } from '../../../store/auth_actions';
+import { uiActions } from '../../../store/ui_slice';
 import './SignIn.css';
 
-const signIn = (props) => {
+const SignIn = (props) => {
+    const dispatch = useDispatch();
+    const errorMessage = useSelector((state) => state.ui.errorMessage);
+    const authSuccess = useSelector((state) => state.ui.authSuccess);
+    const history = useHistory();
+
     const {
         value: enteredEmail,
         isValid: enteredEmailIsValid,
@@ -34,14 +43,22 @@ const signIn = (props) => {
         if (!formIsValid) {
             return;
         }
-        resetEmailInput();
-        resetPasswordInput();
-        props.onSignIn({
+        dispatch(signIn({
             email: enteredEmail,
             password: enteredPassword,
             returnSecureToken: true
-        });
+        }))
+        resetEmailInput();
+        resetPasswordInput();
     };
+
+    useEffect(() => {
+        if (authSuccess) {
+            dispatch(uiActions.setIsAuth())
+            history.push('/home')
+            console.log('SignIn');
+        }
+    }, [authSuccess, history, dispatch])
 
     const emailInputClasses = emailInputHasError
         ? 'signup-form-control invalid'
@@ -54,6 +71,7 @@ const signIn = (props) => {
     return (
         <div className="signInForm">
             <div className="Title">Sign In</div>
+            {errorMessage ? <strong style={{color: "red"}}>{errorMessage}</strong> : null}
             <form onSubmit={formSubmissionHandler}>
                 <div className={emailInputClasses}>
                     <label htmlFor='email' >Email</label>
@@ -83,4 +101,4 @@ const signIn = (props) => {
     );
 };
 
-export default signIn;
+export default SignIn;

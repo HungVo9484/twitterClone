@@ -1,10 +1,21 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import UseInput from '../../../hooks/useInput';
+import { validateUsername, validateEmail, validatePassword} from '../../../lib/validation';
 import Button from '../../Button/Button';
+import { signUp } from '../../../store/auth_actions';
+import { uiActions } from '../../../store/ui_slice';
 import './SignUp.css';
 
-const SignUp = (props) => {
+const SignUp = () => {
+
+    const dispatch = useDispatch();
+    const errorMessage = useSelector((state) => state.ui.errorMessage);
+    const authSuccess = useSelector((state) => state.ui.authSuccess);
+    const history = useHistory();
+
 
     const {
         value: enteredUsername,
@@ -13,7 +24,7 @@ const SignUp = (props) => {
         valueChangeHandler: usernameChangedHandler,
         inputBlurHandler: usernameBlurHandler,
         reset: resetUsernameInput
-    } = UseInput(value => value.trim() !== '');
+    } = UseInput(validateUsername);
 
     const {
         value: enteredEmail,
@@ -22,7 +33,7 @@ const SignUp = (props) => {
         valueChangeHandler: emailChangedHandler,
         inputBlurHandler: emailBlurHandler,
         reset: resetEmailInput
-    } = UseInput(value => value.includes('@'));
+    } = UseInput(validateEmail);
 
     const {
         value: enteredPassword,
@@ -31,7 +42,7 @@ const SignUp = (props) => {
         valueChangeHandler: passwordChangedHandler,
         inputBlurHandler: passwordBlurHandler,
         reset: resetPasswordInput
-    } = UseInput(value => value.trim() !== '');
+    } = UseInput(validatePassword);
 
     let formIsValid = false;
 
@@ -44,18 +55,22 @@ const SignUp = (props) => {
         if (!formIsValid) {
             return;
         };
-        
-
-
-        resetUsernameInput();
-        resetEmailInput();
-        resetPasswordInput();
-        props.onSignUp({
+        dispatch(signUp({
             email: enteredEmail,
             password: enteredPassword,
             returnSecureToken: true
-        }, enteredUsername);
+        }, enteredUsername))
+        resetUsernameInput();
+        resetEmailInput();
+        resetPasswordInput();
     };
+
+    useEffect(() => {
+        if (authSuccess) {
+            dispatch(uiActions.setIsAuth())
+            history.push('/home')
+        }
+    }, [authSuccess, history, dispatch])
 
     const usernameInputClasses = usernameInputHasError
         ? 'signup-form-control invalid'
@@ -72,6 +87,7 @@ const SignUp = (props) => {
     return (
         <div className="signUpForm">
             <div className="Title">Sign Up</div>
+            {errorMessage ? <strong style={{color: "red"}}>{errorMessage}</strong> : null}
             <form onSubmit={formSubmissionHandler}>
                 <div className={usernameInputClasses}>
                     <label htmlFor='userName' >Username</label>

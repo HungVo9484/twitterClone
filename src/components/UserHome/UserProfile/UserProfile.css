@@ -1,0 +1,122 @@
+.userProfile {
+    /* border-bottom: 1px solid var(--twitter-background);
+    height: 66%; */
+}
+
+.profileImage {
+    width: 100%;
+    height: 200px;
+    background-color: var(--twitter-grayColor);
+}
+
+.profileImage > img {
+    width: 100%;
+}
+
+.userProfile_avatar_btn {
+    display: flex;
+
+}
+
+.userProfile_btn {
+    background-color: white !important;
+    border-color: var(--twitter-color) !important;
+    border: 1px solid  !important;
+    color: var(--twitter-color) !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    width: fit-content !important;
+    height: fit-content !important;
+    margin-left: auto !important;
+    margin-top: 10px !important;
+    margin-right: 10px !important;
+    padding: 8px 15px !important;
+}
+
+.userProfile_btn:hover {
+    background-color: var(--twitter-hover) !important;
+    /* width: auto; */
+    /* border-radius: 50%; */
+    transition: color 100ms ease-out !important;
+}
+
+.userInfo {
+    position: relative;
+    top: -67.5px;
+    margin-left: 20px;
+}
+
+.userInfo > h2 {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.userInfo > p {
+    font-size: 14px;
+}
+
+.userProfile_username {
+    font-size: 14px;
+    color: var(--twitter-usernameColor);
+    margin: 0;
+}
+
+.joinedDate {
+    display: flex;
+    align-items: center;
+    color: var(--twitter-usernameColor);
+    font-size: 14px;
+}
+
+.joinedDate > .MuiSvgIcon-root {
+    margin-left: 0px !important;
+    padding-left: 0px!important;
+    margin: 0px !important;
+}
+
+.joinedDate > p {
+    margin: 0px 5px;    
+    padding: 0;
+}
+
+.userInfo_follow {
+    
+}
+
+.userInfo_follow > span {
+    color: var(--twitter-usernameColor);
+    font-size: 14px;
+}
+
+.userProfile_toolbar {
+    position: relative;
+    top: -60px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--twitter-background);
+
+}
+
+.userProfile_toolbar > .MuiButton-root {
+    background-color: white !important;
+    border-color: var(--twitter-color) !important;
+    color: var(--twitter-usernameColor);
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    padding: 15px 47.9px !important;
+    border-radius: 0 !important;
+}
+
+.userProfile_toolbar > .MuiButton-root:hover {
+    background-color: var(--twitter-hover) !important;
+    color: var(--twitter-color) !important;
+    transition: color 100ms ease-out !important;
+    
+}
+
+.userProfile_toolbar_active {
+    border-bottom: 2px solid var(--twitter-color) !important;
+    color: var(--twitter-color) !important;
+}

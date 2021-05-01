@@ -1,19 +1,17 @@
-.newFeeds {
+.userHome {
     flex: 0.5;
     border-right: 1px solid var(--twitter-background);
     min-width: 600px;
     overflow-y: scroll;
-
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.newFeeds::-webkit-scrollbar {
+.userHome::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.newFeeds {
+.userHome {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
-

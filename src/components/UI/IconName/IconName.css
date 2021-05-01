@@ -1,0 +1,11 @@
+.iconName {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    padding: fit-content;
+    background-color: var(--twitter-background);
+    color: white;
+    font-size: 10px;
+    border-radius: 1px;
+    transition: all 0.3s ease-out;
+}

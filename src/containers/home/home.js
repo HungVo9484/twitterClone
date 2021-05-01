@@ -1,19 +1,44 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 
 import NewFeeds from '../../components/NewFeeds/NewFeeds';
 import SideBar from '../../components/sideBar/sideBar';
+import UserHome from '../../components/UserHome/UserHome';
 import Widgets from '../../components/Widgets/Widgets';
+import { getUserInfo, sendUserInfo } from '../../store/data_actions';
 import './home.css';
-import { useStore } from '../../hooks-store/store';
+
 
 const Home = () => {
-    const state = useStore()[0];
-    console.log(state.userInfo);
     
+    const userData = useSelector((state) => state.auth.userInfo);
+    const isSignup = useSelector((state) => state.auth.isSignup);
+    const changed = useSelector((state) => state.auth.changed);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (isSignup) {
+            dispatch(sendUserInfo(userData, userData.username))
+        } else {
+            dispatch(getUserInfo(userData.userId))
+        }
+    }, []);
+
     return (
         <div className="Home">
             <SideBar />
-            <NewFeeds />
+                <Switch>
+                    <Route path="/home" exact>
+                        <NewFeeds />
+                    </Route>
+                    <Route path={`/${userData.username}`} exact>
+                        <UserHome />
+                    </Route>
+                    <Route path="*">
+                        <h2>Page Not Found</h2>
+                    </Route>
+                </Switch>
             <Widgets />
         </div>
     );

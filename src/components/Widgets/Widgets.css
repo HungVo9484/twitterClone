@@ -35,8 +35,8 @@
     margin: 0;
 }
 
-/* @media (max-width: 900px) {
-    .Widgets {
+@media (max-width: 900px) {
+    .widgets {
         display: none;
     }
-} */
+}
