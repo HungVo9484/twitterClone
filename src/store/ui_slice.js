@@ -7,7 +7,7 @@ const uiSlice = createSlice({
         errorMessage: null,
         authSuccess: false,
         isAuth: false,
-        checkAuthStateCompleted: false
+        checkAuthStateCompleted: false,
     },
     reducers: {
         showNotification(state, action) {

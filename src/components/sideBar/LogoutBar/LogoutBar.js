@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Avatar } from '@material-ui/core';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -15,9 +15,10 @@ const LogoutBar = () => {
     const history = useHistory();
     const [toggleLogoutTooltip, setToggleLogoutTooltip] = useState(false);
     const dispatch = useDispatch();
+    const userInfo = useSelector((state) => state.auth.userInfo);
 
-    const displayName = 'Hung Vo'
-    const userName = 'voduyhung'
+    const displayName = userInfo.username;
+    const userName = userInfo.username;
 
     
 

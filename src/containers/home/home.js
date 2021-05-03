@@ -36,7 +36,7 @@ const Home = () => {
                         <UserHome />
                     </Route>
                     <Route path="*">
-                        <h2>Page Not Found</h2>
+                        <h2>Loading...</h2>
                     </Route>
                 </Switch>
             <Widgets />

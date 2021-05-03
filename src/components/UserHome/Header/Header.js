@@ -5,8 +5,6 @@ import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
 import Tooltip from '../../UI/Tooltip/Tooltip';
 // import { deleteUsersInfo, readUsersInfo } from '../../../lib/api';
 
-
-
 import './Header.css';
 
 const Header = () => {

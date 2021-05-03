@@ -48,9 +48,11 @@ export const getUserInfo = (userId) => {
 
         try {
             const data = await sendRequest();
+            dispatch(authActions.addUserInfo(data[Object.keys(data)[0]]))
             console.log(data);
+            console.log(Object.keys(data));
         } catch (error) {
             console.log(error.message);
-        };
+        };  
     };
 };

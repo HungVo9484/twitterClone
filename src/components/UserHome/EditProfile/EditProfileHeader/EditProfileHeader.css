@@ -1,0 +1,28 @@
+.editProfile_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editProfile_closed {
+    display: flex;
+    align-items: center;
+}
+
+.editProfile_closed .MuiSvgIcon-root {
+    color: var(--twitter-color) !important;
+    font-size: 25px !important;
+    padding: 10px !important;
+}
+
+.editProfile_closed .MuiSvgIcon-root:hover {
+    background-color: var(--twitter-hover);
+    width: auto;
+    border-radius: 50%;
+    transition: color 100ms ease-out;
+}
+
+.editProfile_closed h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 20px;
+}
