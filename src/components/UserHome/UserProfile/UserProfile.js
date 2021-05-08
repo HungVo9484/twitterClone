@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Avatar, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TodayOutlinedIcon from '@material-ui/icons/TodayOutlined';
 
+import { sendUserInfo } from '../../../store/data_actions';
+import { imageActions } from '../../../store/image_slice';
 import EditProfile from '../EditProfile/EditProfile';
 import './UserProfile.css';
-import bikiniPic from '../../../assets/avatar/bikini.jpg';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,10 +30,29 @@ const useStyles = makeStyles((theme) => ({
 const UserProfile = (props) => {
     const classes = useStyles();
     const [showEditProfile, setShowEditProfile] = useState(false);
+    const dispatch = useDispatch();
+    const profileImage = useSelector((state) => state.auth.userInfo.profileImage);
+    const avtartImage = useSelector((state) => state.auth.userInfo.avatar);
+
+    const userInfo = useSelector((state) => state.auth.userInfo);
+    const uploadFileCompleted = useSelector((state) => state.image.uploadFileCompleted);
 
     const showEditProfileHandler = () => {
+        dispatch(imageActions.clearAll_profileImage());
+        dispatch(imageActions.clearAll_avatarImage());
+        dispatch(imageActions.clearIsAvatar());
         setShowEditProfile(!showEditProfile);
     }
+
+    useEffect(() => {
+        console.log('sendInfo', uploadFileCompleted)
+        if (uploadFileCompleted) {
+            dispatch(sendUserInfo(userInfo, userInfo.username))
+            dispatch(imageActions.clearUploadFileCompleted())
+        }
+    }, [uploadFileCompleted, dispatch, userInfo])
+    console.log('completed', uploadFileCompleted);
+
     return (
         <>
             <EditProfile
@@ -39,11 +60,11 @@ const UserProfile = (props) => {
                 closedEditProfile={showEditProfileHandler}
             />
             <div className="userProfile">
-                <div className="profileImage">
-                    {/* <img src={""} alt="No Image" /> */}
+                <div className="profileImage" style={{backgroundImage: `url(${profileImage})`}} >
+                    {/* <img src={profileImage} alt="No Image" /> */}
                 </div>
                 <div className="userProfile_avatar_btn">
-                    <Avatar src={bikiniPic} className={classes.large}/>
+                    <Avatar src={avtartImage} className={classes.large}/>
                     <Button
                         className="userProfile_btn"
                         onClick={showEditProfileHandler}

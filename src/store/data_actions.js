@@ -1,11 +1,9 @@
 import { authActions } from './auth_slice';
-import { uiActions } from './ui_slice';
 
 const FIREBASE_DOMAIN = 'https://twitter-clone1-755c7-default-rtdb.firebaseio.com';
 
 export const sendUserInfo = (userData, userName) => {
     return async (dispatch) => {
-
         const newUserData = {};
         newUserData[userName] = userData;
         const url = `${FIREBASE_DOMAIN}/usersInfo.json`;

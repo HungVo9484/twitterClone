@@ -8,7 +8,6 @@ import CheckOutlinedIcon from '@material-ui/icons/CheckOutlined';
 import { logout } from '../../../store/auth_actions';
 import LogoutTooltip from '../LogoutTooltip/LogoutTooltip';
 import './LogoutBar.css';
-import bikiniPic from '../../../assets/avatar/bikini.jpg';
 
 const LogoutBar = () => {
 
@@ -16,11 +15,9 @@ const LogoutBar = () => {
     const [toggleLogoutTooltip, setToggleLogoutTooltip] = useState(false);
     const dispatch = useDispatch();
     const userInfo = useSelector((state) => state.auth.userInfo);
-
+    
     const displayName = userInfo.username;
     const userName = userInfo.username;
-
-    
 
     const toggleLogoutTooltipHandler = () => {
         setToggleLogoutTooltip(!toggleLogoutTooltip);
@@ -36,7 +33,7 @@ const LogoutBar = () => {
                             >
                                 <div className="logoutTooltip_container">
                                     <div className="logoutTooltip_1" >
-                                        <Avatar src={bikiniPic} />
+                                        <Avatar src={userInfo.avatar} />
                                         <div className="displayName">
                                             <strong>{displayName}</strong>
                                             <span className="userName">@{userName}</span>
@@ -55,7 +52,7 @@ const LogoutBar = () => {
         <div className="logoutBarOutline">
             {toggleLogoutTooltip ? LogoutTooltipBar : null}
             <div className="logoutBar" onClick={toggleLogoutTooltipHandler}>
-                <Avatar src={bikiniPic} />
+                <Avatar src={userInfo.avatar} />
                 <div className="displayName">
                     <strong>{displayName}</strong>
                     <span className="userName">@{userName}</span>

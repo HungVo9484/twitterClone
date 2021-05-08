@@ -10,9 +10,14 @@ const authSlice = createSlice({
             avatar: null,
             userId: null,
             profileImage: null,
+            bio: null,
+            location: null,
+            website: null,
+            joinedDate: null,
+            following: [],
+            follower: [],
         },
         isSignup: false,
-        changed: false,
     },
     reducers: {
         addUserInfo(state, action) {
@@ -21,21 +26,31 @@ const authSlice = createSlice({
             };
         },
         clearUserInfo(state) {
-            for (let key of Object.keys(state)) {
+            for (let key of Object.keys(state.userInfo)) {
                 state.userInfo[key] = null;
             };
+        },
+        setFollowing(state, action) {
+            state.userInfo.following.push(action.payload);
+        },
+        unFollowing(state, action) {
+            state.userInfo.following = state.userInfo.following.filter(
+                el => el !== action.payload
+            );
+        },
+        setFollower(state, action) {
+            state.userInfo.follower.push(action.payload);
+        },
+        unFollower(state, action) {
+            state.userInfo.follower = state.userInfo.follower.filter(
+                el => el !== action.payload
+            );
         },
         setIsSignup(state) {
             state.isSignup = true;
         },
         clearIsSignup(state) {
             state.isSignup = false;
-        },
-        setChanged(state) {
-            state.changed = true;
-        },
-        clearChanged(state) {
-            state.changed = false;
         }
     }
 });

@@ -1,6 +1,13 @@
 .editProfile_header {
+    position: sticky;
+    z-index: 600;
+    top: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 20px;
+    background-color: white;
 }
 
 .editProfile_closed {
@@ -26,3 +33,16 @@
     font-weight: 800;
     margin-left: 20px;
 }
+
+.editProfile_header > .MuiButton-root {
+    background-color: var(--twitter-color) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    width: 80px !important;
+    height: 40px !important;
+    margin-left: auto !important;
+}
+

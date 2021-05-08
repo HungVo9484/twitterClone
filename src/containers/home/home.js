@@ -14,7 +14,6 @@ const Home = () => {
     
     const userData = useSelector((state) => state.auth.userInfo);
     const isSignup = useSelector((state) => state.auth.isSignup);
-    const changed = useSelector((state) => state.auth.changed);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -23,6 +22,7 @@ const Home = () => {
         } else {
             dispatch(getUserInfo(userData.userId))
         }
+        console.log('home useEffect')
     }, []);
 
     return (

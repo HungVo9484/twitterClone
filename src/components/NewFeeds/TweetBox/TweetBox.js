@@ -11,19 +11,19 @@ import ScheduleOutlinedIcon from '@material-ui/icons/ScheduleOutlined';
 
 import Tooltip from '../../UI/Tooltip/Tooltip';
 import './TweetBox.css';
-import bikiniPic from '../../../assets/avatar/bikini.jpg';
 
 
 
 const TweetBox = () => {
   const userName = useSelector((state) => state.auth.userInfo.username)
+  const avatar = useSelector((state) => state.auth.userInfo.avatar)
 
   return (
       <div className='tweetBox'>
           <form>
               <div className="tweetBox_input">
                 <Link to={`/${userName}`}>
-                <Avatar src={bikiniPic} />
+                <Avatar src={avatar} />
                 </Link>
                 <input type="text" placeholder="What's happening ?..." />
               </div>

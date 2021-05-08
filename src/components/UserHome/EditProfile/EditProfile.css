@@ -1,0 +1,6 @@
+.editProfile {
+    overflow-y: scroll;
+    height: 100%;
+    box-sizing: border-box;
+    /* position: relative; */
+}

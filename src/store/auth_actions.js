@@ -8,6 +8,7 @@ export const logout = () => {
         localStorage.removeItem('expirationDate');
         dispatch(authActions.clearUserInfo());
         dispatch(uiActions.clearAll());
+        dispatch(authActions.clearIsSignup());
     };
 };
 

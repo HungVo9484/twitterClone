@@ -8,6 +8,7 @@ const uiSlice = createSlice({
         authSuccess: false,
         isAuth: false,
         checkAuthStateCompleted: false,
+        btnProfileStatus: 'Save',
     },
     reducers: {
         showNotification(state, action) {
@@ -37,6 +38,12 @@ const uiSlice = createSlice({
         },
         setCheckAuthStateCompleted(state) {
             state.checkAuthStateCompleted = true;
+        },
+        setBtnProfileStatusApply(state) {
+            state.btnProfileStatus = 'Apply';
+        },
+        setBtnProfileStatusSave(state) {
+            state.btnProfileStatus = 'Save';
         },
         clearAll(state) {
             state.notification = null;
